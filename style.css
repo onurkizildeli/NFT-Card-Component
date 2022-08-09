@@ -4,36 +4,56 @@
     padding: 0%;
 }
 
-html,
 body {
-    height: 100%;
-    background-color: #0D192C;
+    height: 100vh;
+    background-color: #0d192c;
     color: white;
-}
-.flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .container {
     box-sizing: border-box;
     border-radius: 15px;
-    flex: 0 0 350px;
+    max-width: 350px;
     padding: 24px;
     background-color: #15263f;
+    flex-shrink: 1;
+}
+
+header {
+    position: relative;
 }
 
 .item-image {
     width: 302px;
+    height: 302px;
     margin-bottom: 20px;
     border-radius: 8px;
 }
 
-.item-image::hover {
-    background: #00fff8;
+.image-overlay {
+    width: 302px;
+    height: 302px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    background-color: rgb(0, 255, 248, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease 0.5;
 }
+
+.image-overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
 
 h1 {
     font-size: 22px;
@@ -51,7 +71,7 @@ p {
     font-weight: 100;
     margin-bottom: 20px;
     line-height: 1.5;
-    color: #8BACD9;
+    color: #8bacd9;
 }
 
 h2 {
@@ -113,7 +133,7 @@ span:hover {
 figcaption {
     display: flex;
     gap: 5px;
-    color: #8BACD9;
+    color: #8bacd9;
 }
 
 .item-image::hover {
